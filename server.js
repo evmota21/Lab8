@@ -23,7 +23,7 @@ let listOfBookmarks = [
     }
 ];
 
-app.get( '/lab7/bookmarks', ( req, res ) => { //Return all bookmarks with code 200.
+app.get( '/api/bookmarks', ( req, res ) => { //Return all bookmarks with code 200.
     console.log("Getting all bookmarks.");
 
     Bookmarks
@@ -37,7 +37,7 @@ app.get( '/lab7/bookmarks', ( req, res ) => { //Return all bookmarks with code 2
         })
 }); //get bookmarks done
 
-app.get( '/lab7/bookmark' , ( req, res ) => {
+app.get( '/api/bookmark' , ( req, res ) => {
     console.log( "Getting a bookmark by title." );
 
     console.log( req.query );
@@ -62,7 +62,7 @@ app.get( '/lab7/bookmark' , ( req, res ) => {
 
 }); // get bookmark by title done
 
-app.post( '/lab7/bookmarks' , jsonParser, ( req, res ) => {
+app.post( '/api/bookmarks' , jsonParser, ( req, res ) => {
     console.log("Adding a new bookmark to the list...");
     console.log( "Body" , req.body );
 
@@ -125,7 +125,7 @@ app.post( '/lab7/bookmarks' , jsonParser, ( req, res ) => {
 
 });/*create bookmark done*/
 
-app.delete( '/lab7/bookmark/:id' , ( req, res ) => {
+app.delete( '/api/bookmark/:id' , ( req, res ) => {
     console.log( req.params );
     let bookmarkId = req.params.id;
 
@@ -147,7 +147,7 @@ app.delete( '/lab7/bookmark/:id' , ( req, res ) => {
 
 }); //delete bookmark done
 
-app.patch( '/lab7/bookmark/:id' , jsonParser, ( req, res ) => {
+app.patch( '/api/bookmark/:id' , jsonParser, ( req, res ) => {
     console.log("Updating a bookmark on the list...");
     console.log( "Body" , req.body );
 
